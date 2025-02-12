@@ -1,9 +1,9 @@
-  import {Button} from "@/components/ui/button"
+  import HeroSection from "@/compoents/hero"
  export default function Home() {
   return(
      <div className="mt-40">
-    < Button>Welcome to Next.js!</Button>
- 
+        <HeroSection/>
+      
   </div>
   );
  }
