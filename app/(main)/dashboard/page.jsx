@@ -7,6 +7,11 @@ const Dashboard = () => {
   {/* overview */}
 
   {/* Accounts Grid */}
+  <div>
+    <CreateAccountDrawer >
+      
+    </CreateAccountDrawer>
+  </div>
   </div> 
         
 }
