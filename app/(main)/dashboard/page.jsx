@@ -1,5 +1,6 @@
 import CreateAccountDrawer from '@/components/create-account-drawer'
 import { Card, CardContent } from '@/components/ui/card'
+import { Plus } from 'lucide-react'
 import React from 'react'
 
 const Dashboard = () => {
@@ -18,10 +19,10 @@ const Dashboard = () => {
             </CardContent>
           </Card>
         </CreateAccountDrawer>
-        {accounts.length > 0 &&
+        {/* {accounts.length > 0 &&
           accounts?.map((account) => (
             <AccountCard key={account.id} account={account} />
-          ))}
+          ))} */}
       </div>
     </div>
         
