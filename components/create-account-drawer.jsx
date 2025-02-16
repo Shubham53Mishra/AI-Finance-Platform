@@ -1,21 +1,44 @@
- "use client";
- import React from 'react'
-  import { useState } from 'react';
+"use client";
+import React from 'react'
+import { useState } from 'react';
 
-import { Drawer,  DrawerContent,  DrawerHeader, DrawerTitle, DrawerTrigger } from './ui/drawer';
- 
- 
- const CreateAccountDrawer = ({children}) => {
-  const [open, setOpen] =  useState(false)
-   return (
-    <Drawer open={open} onOpenChange={setOpen}>   
-  <DrawerTrigger asChild>{children}</DrawerTrigger>
-  <DrawerContent>
-    <DrawerHeader>
-      <DrawerTitle>Create New Account</DrawerTitle>
-    
-    </DrawerHeader>
-    <div className="px-4 pb-4">
+import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerTrigger } from './ui/drawer';
+import { Button } from './ui/button';
+import { Input } from './ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
+import { Switch } from './ui/switch';
+import { Loader2 } from './ui/loader';
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
+
+const CreateAccountDrawer = ({ children }) => {
+  const [open, setOpen] = useState(false)
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    setValue,
+    watch,
+    reset,
+  } = useForm({
+    resolver: zodResolver(accountSchema),
+    defaultValues: {
+      name: "",
+      type: "CURRENT",
+      balance: "",
+      isDefault: false,
+    },
+  });
+  return (
+    <Drawer open={open} onOpenChange={setOpen}>
+      <DrawerTrigger asChild>{children}</DrawerTrigger>
+      <DrawerContent>
+        <DrawerHeader>
+          <DrawerTitle>Create New Account</DrawerTitle>
+
+        </DrawerHeader>
+        <div className="px-4 pb-4">
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <div className="space-y-2">
               <label
@@ -123,5 +146,5 @@ import { Drawer,  DrawerContent,  DrawerHeader, DrawerTitle, DrawerTrigger } fro
     </Drawer>
   );
 }
- 
- export default CreateAccountDrawer
+
+export default CreateAccountDrawer
