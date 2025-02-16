@@ -9,10 +9,10 @@ import { Drawer,  DrawerContent,  DrawerHeader, DrawerTitle, DrawerTrigger } fro
   const [open, setOpen] =  useState(false)
    return (
     <Drawer open={open} onOpenChange={setOpen}>   
-  <DrawerTrigger>{children}</DrawerTrigger>
+  <DrawerTrigger asChild>{children}</DrawerTrigger>
   <DrawerContent>
     <DrawerHeader>
-      <DrawerTitle>Are you absolutely sure?</DrawerTitle>
+      <DrawerTitle>Create New Account</DrawerTitle>
     
     </DrawerHeader>
     
