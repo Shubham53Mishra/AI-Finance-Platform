@@ -1,3 +1,4 @@
+import CreateAccountDrawer from '@/components/create-account-drawer'
 import React from 'react'
 
 const Dashboard = () => {
@@ -9,7 +10,7 @@ const Dashboard = () => {
   {/* Accounts Grid */}
   <div>
     <CreateAccountDrawer >
-      
+       open
     </CreateAccountDrawer>
   </div>
   </div> 
