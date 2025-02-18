@@ -7,7 +7,7 @@ import { testimonialsData } from "@/data/landing";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-//import { BarChart3, CreditCard, Globe, PieChart, Receipt, Zap } from "lucide-react";
+import { BarChart3, CreditCard, Globe, PieChart, Receipt, Zap } from "lucide-react";
 
  
 export default function Home() {
