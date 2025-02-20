@@ -1,35 +1,39 @@
-import HeroSection from "@/components/hero";
-import { statsData } from "@/data/landing";
-import { featuresData } from "@/data/landing";
-import { Card, CardContent } from "@/components/ui/card";
-import { howItWorksData } from "@/data/landing";
-import { testimonialsData } from "@/data/landing";
-import Image from "next/image";
-import Link from "next/link";
+import React from "react";
 import { Button } from "@/components/ui/button";
-import { BarChart3, CreditCard, Globe, PieChart, Receipt, Zap } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import Image from "next/image";
+import {
+  featuresData,
+  howItWorksData,
+  statsData,
+  testimonialsData,
+} from "@/data/landing";
+import HeroSection from "@/components/hero";
+import Link from "next/link";
 
- 
-export default function Home() {
-   return (
-      <div className="mt-40">
-         <HeroSection />
+const LandingPage = () => {
+  return (
+    <div className="min-h-screen bg-white">
+      {/* Hero Section */}
+      <HeroSection />
 
-         {/* Stats Section */}
-         <section className="py-20 bg-blue-50">
+      {/* Stats Section */}
+      <section className="py-20 bg-blue-50">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-                  {statsData.map((statsData,index)=>(
-                     <div key={index} className="text-center">
-                        <div className="text-4xl font-bold text-blue-600 mb-2">{statsData.value}</div>
-                        <div className="text-gray-600">{statsData.label}</div>
-                     </div>
-                  ))}
-               </div>
-            </div>
-          </section>
+            {statsData.map((stat, index) => (
+              <div key={index} className="text-center">
+                <div className="text-4xl font-bold text-blue-600 mb-2">
+                  {stat.value}
+                </div>
+                <div className="text-gray-600">{stat.label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-              {/* Features Section */}
+      {/* Features Section */}
       <section id="features" className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
@@ -49,8 +53,8 @@ export default function Home() {
         </div>
       </section>
 
-         {/* How It Works Section */}
-         <section className="py-20 bg-blue-50">
+      {/* How It Works Section */}
+      <section className="py-20 bg-blue-50">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-16">How It Works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
@@ -67,8 +71,8 @@ export default function Home() {
         </div>
       </section>
 
-        {/* Testimonials Section */}
-        <section id="testimonials" className="py-20">
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-16">
             What Our Users Say
@@ -100,7 +104,6 @@ export default function Home() {
         </div>
       </section>
 
-      
       {/* CTA Section */}
       <section className="py-20 bg-blue-600">
         <div className="container mx-auto px-4 text-center">
@@ -121,7 +124,8 @@ export default function Home() {
           </Link>
         </div>
       </section>
-          
-      </div>
-   );
-}
+    </div>
+  );
+};
+
+export default LandingPage;
